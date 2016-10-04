@@ -50,7 +50,7 @@ def delta_time():
 
 try:
   while True:
-    delta = delta_time() # 前回のループからの経過時間
+    delta = delta_time()
 
     if mid_c_lock_time > 0:
       mid_c_lock_time -= delta
