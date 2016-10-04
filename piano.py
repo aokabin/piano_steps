@@ -4,11 +4,11 @@ import time
 
 GPIO.setmode(GPIO.BCM)
 
-GPIO.setup(2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # mid_c
-GPIO.setup(3, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # mid_d
+GPIO.setup(27, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # mid_c
+GPIO.setup(22, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # mid_d
 GPIO.setup(4, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # mid_e
-GPIO.setup(14, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # mid_f
-GPIO.setup(15, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # mid_g
+GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # mid_f
+GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # mid_g
 GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # hi_a
 GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # hi_b
 
