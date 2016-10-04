@@ -56,15 +56,19 @@ try:
 
     if mid_c_lock_time > 0:
       mid_c_lock_time -= delta
+      print("@"+str(mid_c_lock_time))
       if mid_c_lock_time < 0:
         mid_c_lock_time = 0
+        print("READY")
 
     if GPIO.input(27) == 0 and mid_c_lock_time <= 0:
       mid_c_free = True
+      print("AVAILABLE")
 
     if (GPIO.input(27) == 1 and mid_c_free):
       mid_c_free = False
       mid_c_lock_time = delay_time
+      print("ringing")
       mid_c.play()
 
     # if (GPIO.input(3) == 1 && mid_d_lock_time <= 0):
