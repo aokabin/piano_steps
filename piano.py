@@ -43,6 +43,8 @@ end_time = time.time()
 #     mid_c_lock_time = 0
 
 def delta_time():
+  global start_time
+  global end_time
   end_time = time.time()
   delta = end_time - start_time
   start_time = end_time
