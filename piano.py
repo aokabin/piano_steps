@@ -15,7 +15,7 @@ GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # hi_b
 delay_time = 0.1 # second
 
 pygame.init()
-pygame.mixer.set_num_channels(8)
+pygame.mixer.set_num_channels(100)
 
 mid_c = pygame.mixer.Sound("mid_c.wav")
 mid_c_lock_time = 0
