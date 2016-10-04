@@ -78,3 +78,7 @@ try:
     # if (GPIO.input(18) == 1 && hi_b_lock_time <= 0):
     #   hi_b()
 
+except KeyboardInterrupt:
+  GPIO.cleanup()
+  pass
+
