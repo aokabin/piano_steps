@@ -83,74 +83,74 @@ try:
       mid_d.play()
 
     # mid e
-    if mid_d_lock_time > 0:
-      mid_d_lock_time -= delta
-      if mid_d_lock_time < 0:
-        mid_d_lock_time = 0
+    if mid_e_lock_time > 0:
+      mid_e_lock_time -= delta
+      if mid_e_lock_time < 0:
+        mid_e_lock_time = 0
 
-    if GPIO.input(4) == 0 and mid_d_lock_time <= 0:
-      mid_d_free = True
+    if GPIO.input(4) == 0 and mid_e_lock_time <= 0:
+      mid_e_free = True
 
-    if (GPIO.input(4) == 1 and mid_d_free):
-      mid_d_free = False
-      mid_d_lock_time = delay_time
-      mid_d.play()
+    if (GPIO.input(4) == 1 and mid_e_free):
+      mid_e_free = False
+      mid_e_lock_time = delay_time
+      mid_e.play()
 
     #mid f
-    if mid_d_lock_time > 0:
-      mid_d_lock_time -= delta
-      if mid_d_lock_time < 0:
-        mid_d_lock_time = 0
+    if mid_f_lock_time > 0:
+      mid_f_lock_time -= delta
+      if mid_f_lock_time < 0:
+        mid_f_lock_time = 0
 
-    if GPIO.input(23) == 0 and mid_d_lock_time <= 0:
-      mid_d_free = True
+    if GPIO.input(23) == 0 and mid_f_lock_time <= 0:
+      mid_f_free = True
 
-    if (GPIO.input(23) == 1 and mid_d_free):
-      mid_d_free = False
-      mid_d_lock_time = delay_time
-      mid_d.play()
+    if (GPIO.input(23) == 1 and mid_f_free):
+      mid_f_free = False
+      mid_f_lock_time = delay_time
+      mid_f.play()
 
     # mid g
-    if mid_d_lock_time > 0:
-      mid_d_lock_time -= delta
-      if mid_d_lock_time < 0:
-        mid_d_lock_time = 0
+    if mid_g_lock_time > 0:
+      mid_g_lock_time -= delta
+      if mid_g_lock_time < 0:
+        mid_g_lock_time = 0
 
-    if GPIO.input(24) == 0 and mid_d_lock_time <= 0:
-      mid_d_free = True
+    if GPIO.input(24) == 0 and mid_g_lock_time <= 0:
+      mid_g_free = True
 
-    if (GPIO.input(24) == 1 and mid_d_free):
-      mid_d_free = False
-      mid_d_lock_time = delay_time
-      mid_d.play()
+    if (GPIO.input(24) == 1 and mid_g_free):
+      mid_g_free = False
+      mid_g_lock_time = delay_time
+      mid_g.play()
 
     # hi a
-    if mid_d_lock_time > 0:
-      mid_d_lock_time -= delta
-      if mid_d_lock_time < 0:
-        mid_d_lock_time = 0
+    if hi_a_lock_time > 0:
+      hi_a_lock_time -= delta
+      if hi_a_lock_time < 0:
+        hi_a_lock_time = 0
 
-    if GPIO.input(17) == 0 and mid_d_lock_time <= 0:
-      mid_d_free = True
+    if GPIO.input(17) == 0 and hi_a_lock_time <= 0:
+      hi_a_free = True
 
-    if (GPIO.input(17) == 1 and mid_d_free):
-      mid_d_free = False
-      mid_d_lock_time = delay_time
-      mid_d.play()
+    if (GPIO.input(17) == 1 and hi_a_free):
+      hi_a_free = False
+      hi_a_lock_time = delay_time
+      hi_a.play()
 
     # hi b
-    if mid_d_lock_time > 0:
-      mid_d_lock_time -= delta
-      if mid_d_lock_time < 0:
-        mid_d_lock_time = 0
+    if hi_b_lock_time > 0:
+      hi_b_lock_time -= delta
+      if hi_b_lock_time < 0:
+        hi_b_lock_time = 0
 
-    if GPIO.input(18) == 0 and mid_d_lock_time <= 0:
-      mid_d_free = True
+    if GPIO.input(18) == 0 and hi_b_lock_time <= 0:
+      hi_b_free = True
 
-    if (GPIO.input(18) == 1 and mid_d_free):
-      mid_d_free = False
-      mid_d_lock_time = delay_time
-      mid_d.play()
+    if (GPIO.input(18) == 1 and hi_b_free):
+      hi_b_free = False
+      hi_b_lock_time = delay_time
+      hi_b.play()
 
 except KeyboardInterrupt:
   GPIO.cleanup()
