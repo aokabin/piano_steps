@@ -60,7 +60,7 @@ try:
     if GPIO.input(2) == 0 and mid_c_lock_time <= 0:
       mid_c_free = True
 
-    if (GPIO.input(2) == 1 && mid_c_free):
+    if (GPIO.input(2) == 1 and mid_c_free):
       mid_c_free = False
       mid_c_lock_time = delay_time
       mid_c.play()
