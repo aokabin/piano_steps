@@ -12,7 +12,7 @@ GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # mid_g
 GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # hi_a
 GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # hi_b
 
-delay_time = 0.5 # second
+delay_time = 0.1 # second
 
 pygame.init()
 pygame.mixer.set_num_channels(8)
