@@ -20,27 +20,27 @@ pygame.mixer.set_num_channels(8)
 mid_c = pygame.mixer.Sound("mid_c.wav")
 mid_c_lock_time = 0
 mid_c_free = True
-# mid_d = pygame.mixer.Sound("mid_d.wav")
-# mid_d_lock_time = 0
-# mid_e = pygame.mixer.Sound("mid_e.wav")
-# mid_e_lock_time = 0
-# mid_f = pygame.mixer.Sound("mid_f.wav")
-# mid_f_lock_time = 0
-# mid_g = pygame.mixer.Sound("mid_g.wav")
-# mid_g_lock_time = 0
-# hi_a = pygame.mixer.Sound("hi_a.wav")
-# hi_a_lock_time = 0
-# hi_b = pygame.mixer.Sound("hi_b.wav")
-# hi_b_lock_time = 0
+mid_d = pygame.mixer.Sound("mid_d.wav")
+mid_d_lock_time = 0
+mid_d_free = True
+mid_e = pygame.mixer.Sound("mid_e.wav")
+mid_e_lock_time = 0
+mid_e_free = True
+mid_f = pygame.mixer.Sound("mid_f.wav")
+mid_f_lock_time = 0
+mid_f_free = True
+mid_g = pygame.mixer.Sound("mid_g.wav")
+mid_g_lock_time = 0
+mid_g_free = True
+hi_a = pygame.mixer.Sound("hi_a.wav")
+hi_a_lock_time = 0
+hi_a_free = True
+hi_b = pygame.mixer.Sound("hi_b.wav")
+hi_b_lock_time = 0
+hi_b_free = True
 
 start_time = time.time()
 end_time = time.time()
-
-# def timer_decrement():
-#   if mid_c_lock_time > 0:
-#     mid_c_lock_time -= delta_time()
-#   else
-#     mid_c_lock_time = 0
 
 def delta_time():
   global start_time
@@ -54,6 +54,7 @@ try:
   while True:
     delta = delta_time()
 
+    # mid c
     if mid_c_lock_time > 0:
       mid_c_lock_time -= delta
       if mid_c_lock_time < 0:
@@ -67,20 +68,89 @@ try:
       mid_c_lock_time = delay_time
       mid_c.play()
 
-    time.sleep(0.05)
+    # mid d
+    if mid_d_lock_time > 0:
+      mid_d_lock_time -= delta
+      if mid_d_lock_time < 0:
+        mid_d_lock_time = 0
 
-    # if (GPIO.input(3) == 1 && mid_d_lock_time <= 0):
-    #   mid_d()
-    # if (GPIO.input(4) == 1 && mid_e_lock_time <= 0):
-    #   mid_e()
-    # if (GPIO.input(14) == 1 && mid_f_lock_time <= 0):
-    #   mid_f()
-    # if (GPIO.input(15) == 1 && mid_g_lock_time <= 0):
-    #   mid_g()
-    # if (GPIO.input(17) == 1 && hi_a_lock_time <= 0):
-    #   hi_a()
-    # if (GPIO.input(18) == 1 && hi_b_lock_time <= 0):
-    #   hi_b()
+    if GPIO.input(22) == 0 and mid_d_lock_time <= 0:
+      mid_d_free = True
+
+    if (GPIO.input(22) == 1 and mid_d_free):
+      mid_d_free = False
+      mid_d_lock_time = delay_time
+      mid_d.play()
+
+    # mid e
+    if mid_d_lock_time > 0:
+      mid_d_lock_time -= delta
+      if mid_d_lock_time < 0:
+        mid_d_lock_time = 0
+
+    if GPIO.input(4) == 0 and mid_d_lock_time <= 0:
+      mid_d_free = True
+
+    if (GPIO.input(4) == 1 and mid_d_free):
+      mid_d_free = False
+      mid_d_lock_time = delay_time
+      mid_d.play()
+
+    #mid f
+    if mid_d_lock_time > 0:
+      mid_d_lock_time -= delta
+      if mid_d_lock_time < 0:
+        mid_d_lock_time = 0
+
+    if GPIO.input(23) == 0 and mid_d_lock_time <= 0:
+      mid_d_free = True
+
+    if (GPIO.input(23) == 1 and mid_d_free):
+      mid_d_free = False
+      mid_d_lock_time = delay_time
+      mid_d.play()
+
+    # mid g
+    if mid_d_lock_time > 0:
+      mid_d_lock_time -= delta
+      if mid_d_lock_time < 0:
+        mid_d_lock_time = 0
+
+    if GPIO.input(24) == 0 and mid_d_lock_time <= 0:
+      mid_d_free = True
+
+    if (GPIO.input(24) == 1 and mid_d_free):
+      mid_d_free = False
+      mid_d_lock_time = delay_time
+      mid_d.play()
+
+    # hi a
+    if mid_d_lock_time > 0:
+      mid_d_lock_time -= delta
+      if mid_d_lock_time < 0:
+        mid_d_lock_time = 0
+
+    if GPIO.input(17) == 0 and mid_d_lock_time <= 0:
+      mid_d_free = True
+
+    if (GPIO.input(17) == 1 and mid_d_free):
+      mid_d_free = False
+      mid_d_lock_time = delay_time
+      mid_d.play()
+
+    # hi b
+    if mid_d_lock_time > 0:
+      mid_d_lock_time -= delta
+      if mid_d_lock_time < 0:
+        mid_d_lock_time = 0
+
+    if GPIO.input(18) == 0 and mid_d_lock_time <= 0:
+      mid_d_free = True
+
+    if (GPIO.input(18) == 1 and mid_d_free):
+      mid_d_free = False
+      mid_d_lock_time = delay_time
+      mid_d.play()
 
 except KeyboardInterrupt:
   GPIO.cleanup()
